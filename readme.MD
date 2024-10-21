@@ -1,0 +1,1 @@
+Raspberry Pi PICO with sensors. Prgrammed in both C and Micropython.
