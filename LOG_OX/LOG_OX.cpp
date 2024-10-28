@@ -26,7 +26,7 @@ void setup() {
 void loop(){
   M5.update();
   delay(500);
-  M5.Lcd.print("\n CHECKING SSID, PWD \n");
+  M5.Lcd.print("CHECKING SSID, PWD \n");
   WiFi.begin(SSID, PSWD);
   delay(10000);
 
@@ -42,32 +42,32 @@ void loop(){
     M5.Lcd.print(".");
   }
 
-  M5.Lcd.print("\n STATUS: \n");
+  M5.Lcd.print("/n STATUS: /n");
 
   // Notify user on the status of the auto WiFi connection
   // whether logged in or not.
 
   if (WiFi.status() == WL_CONNECTED){
-    M5.Lcd.print("\n CONNECTED \n");
+    M5.Lcd.print("CONNECTED \n");
 
     // IP of shield
     ip = WiFi.localIP();
-    M5.Lcd.print("\n IP \n");
+    M5.Lcd.print("IP: ");
     M5.Lcd.print(ip);
 
     // MAC of shield
     WiFi.macAddress(MAC);
-    M5.Lcd.print("\n MAC: /n");
+    M5.Lcd.print("\n MAC:");
     M5.Lcd.print(MAC[5], HEX);
 
     // GATEWAY IP of shield
     gateway = WiFi.gatewayIP();
-    M5.Lcd.print("\n GATEWAY: \n");
+    M5.Lcd.print("\n GATEWAY:");
     M5.Lcd.print(gateway);
 
     // SUBNET
     subnet = WiFi.subnetMask();
-    M5.Lcd.print("SUBNET MASK : \n");
+    M5.Lcd.print("\n SUBNET MASK : ");
     M5.Lcd.print(subnet);
   } else {
     M5.Lcd.print("\n NOT CONNECTED \n");
@@ -89,5 +89,3 @@ void loop(){
   }
   delay(500);
 }
-
-
