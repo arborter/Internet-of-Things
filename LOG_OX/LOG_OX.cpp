@@ -3,11 +3,9 @@
 #include "M5Unified.h"
 #include <FastLED.h>
 
-
+// Set credentials
 char SSID[] = "-";
 char PSWD[] = "";
-
-const int menu_size = 3;
 
 byte MAC[6];
 
@@ -34,7 +32,6 @@ void loop(){
 
   // If not automatically logged into a network 
   // upon booting, a scanning for networks begins
-
   while (WiFi.status() != WL_CONNECTED && millis() - startAttemptTime < 10000)
   {
     delay(1000);
